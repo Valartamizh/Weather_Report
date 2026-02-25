@@ -42,7 +42,7 @@ public class WeatherServiceImpl implements WeatherService {
         return WeatherDto.builder()
                 .recordDate(weather.getRecordDate())
                 .weatherCondition(weather.getWeatherCondition())
-                .temperature(weather.getTemperature())
+                .temp(weather.getTemperature())
                 .humidity(weather.getHumidity())
                 .pressure(weather.getPressure())
                 .build();

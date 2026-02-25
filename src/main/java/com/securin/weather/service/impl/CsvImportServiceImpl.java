@@ -48,7 +48,7 @@ public class CsvImportServiceImpl implements CsvImportService {
                         batch.clear();
                     }
                 } catch (Exception e) {
-                    log.warn("Skipping invalid row during CSV read");
+                    log.warn("Invalid row found during CSV read");
                 }
             }
             if (!batch.isEmpty()) {

@@ -36,10 +36,10 @@ public class AnalyticsServiceImpl implements AnalyticsService {
             List<Double> temps = monthData.stream()
                     .map(Weather::getTemperature)
                     .sorted()
-                    .collect(Collectors.toList());
+                    .toList();
 
-            double min = temps.get(0);
-            double max = temps.get(temps.size() - 1);
+            double min = temps.getFirst();
+            double max = temps.getLast();
 
             double median;
             int size = temps.size();

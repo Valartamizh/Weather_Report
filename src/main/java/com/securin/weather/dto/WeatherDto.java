@@ -10,7 +10,7 @@ import lombok.Data;
 public class WeatherDto {
     private LocalDateTime recordDate;
     private String weatherCondition;
-    private Double temperature;
+    private Double temp;
     private Double humidity;
     private Double pressure;
 }

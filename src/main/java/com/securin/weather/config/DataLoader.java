@@ -16,11 +16,9 @@ public class DataLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
-        log.info("Checking database state...");
 
         if (weatherRepository.count() == 0) {
-            log.info(
-                    "Database is CURRENTLY EMPTY. Please navigate to Swagger UI to upload the CSV dataset using the /upload endpoint.");
+            log.info("Database is CURRENTLY EMPTY. Please navigate to Swagger UI to upload the CSV dataset using the /upload endpoint.");
         } else {
             log.info("Database contains data ({} records). Ready to serve API requests.", weatherRepository.count());
         }
