@@ -35,14 +35,29 @@ public class CsvImportServiceImpl implements CsvImportService {
             for (String[] row : rows) {
                 try {
                     Weather w = new Weather();
+
                     w.setRecordDate(LocalDateTime.parse(row[0], formatter));
                     w.setWeatherCondition(row[1]);
-                    w.setTemperature(parseDouble(row[11]));
-                    w.setHumidity(parseDouble(row[6]));
-                    w.setPressure(parseDouble(row[8]));
+                    w.setDewptm(parseDouble(row[2]));
+                    w.setFog(parseDouble(row[3]));
+                    w.setHail(parseDouble(row[4]));
                     w.setHeatinde(parseDouble(row[5]));
-
+                    w.setHumidity(parseDouble(row[6]));
+                    w.setPrecipm(parseDouble(row[7]));
+                    w.setPressure(parseDouble(row[8]));
+                    w.setRain(parseDouble(row[9]));
+                    w.setSnow(parseDouble(row[10]));
+                    w.setTemperature(parseDouble(row[11]));
+                    w.setThunder(parseDouble(row[12]));
+                    w.setTornado(parseDouble(row[13]));
+                    w.setVism(parseDouble(row[14]));
+                    w.setWinddegrees(parseDouble(row[15]));
+                    w.setWinddirection(row[16]);
+                    w.setWgustm(parseDouble(row[17]));
+                    w.setWindchill(parseDouble(row[18]));
+                    w.setWspdm(parseDouble(row[19]));
                     batch.add(w);
+
                     if (batch.size() >= 1000) {
                         weatherRepository.saveAll(batch);
                         batch.clear();
